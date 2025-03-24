@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b2liptxmwvbgs"]
+
+[ext_resource type="Script" path="res://Resources/node_data_resource.gd" id="1_k8fbv"]
+
+[resource]
+script = ExtResource("1_k8fbv")
+global_position = Vector2(0, 0)
+node_path = NodePath("")
+parent_node_path = NodePath("")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdt8ka8psimfo"]
+
+[ext_resource type="Script" path="res://Scenes/objects/plants/tomato.gd" id="1_swf7n"]
+[ext_resource type="Texture2D" uid="uid://bakpcvstfo5da" path="res://Assets/game/objects/basic_plants.png" id="2_abg8p"]
+[ext_resource type="PackedScene" uid="uid://d3tqht2t8msox" path="res://Scenes/objects/plants/watering_particles.tscn" id="3_disj2"]
+[ext_resource type="PackedScene" uid="uid://0kmfny882b3k" path="res://Scenes/objects/plants/flowering_particles.tscn" id="4_k5nwm"]
+[ext_resource type="PackedScene" uid="uid://1prisn0v4wq" path="res://Scenes/objects/plants/growth_cycle_component.tscn" id="5_aopf4"]
+[ext_resource type="PackedScene" uid="uid://43uc6kchqmic" path="res://Scenes/components/hurt_component.tscn" id="6_dly6n"]
+[ext_resource type="PackedScene" uid="uid://y0hl4jr80dvm" path="res://Scenes/components/save_data_component.tscn" id="7_hsj3e"]
+[ext_resource type="Resource" uid="uid://ctowxekyl2p38" path="res://Resources/scene_data_resource.tres" id="8_dwlyj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fs7w"]
+size = Vector2(10, 8)
+
+[node name="Tomato" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_swf7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("2_abg8p")
+hframes = 6
+vframes = 2
+frame = 7
+
+[node name="WateringParticles" parent="." instance=ExtResource("3_disj2")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("4_k5nwm")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("5_aopf4")]
+days_until_harvesting = 10
+
+[node name="HurtComponent" parent="." instance=ExtResource("6_dly6n")]
+position = Vector2(0, -4)
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_1fs7w")
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("7_hsj3e")]
+save_data_resource = ExtResource("8_dwlyj")

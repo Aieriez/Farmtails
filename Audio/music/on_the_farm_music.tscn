@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dufkldo25lj5k"]
+
+[ext_resource type="AudioStream" uid="uid://cmj30r3f7vhdd" path="res://Assets/audio/music/on_the_farm.ogg" id="1_50ymg"]
+
+[node name="OnTheFarmMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_50ymg")
+autoplay = true
+bus = &"Music"

@@ -1,0 +1,13 @@
+~ start
+
+Marlow: [[Hi|Hello|Howdy]], nice to meet you.
+Marlow: Welcome to you new farm.
+Marlow: As you can see the cows and chickes are hungry.
+Marlow: You need to grow some crops to feed them.
+Marlow: Here are some seeds to grow some crops.
+- Take crop seeds
+	Player: Yeah, I can grow some crops.
+	do GameDialogueManager.action_give_crop_seeds()
+- No, I don't want them now
+	Player: I'm not ready to grow my farm yet. 
+=> END
